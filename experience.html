@@ -1,0 +1,161 @@
+<!-- experience.html -->
+<style>
+    /* 1. Hide all detail sections by default */
+    .company-section {
+        display: none;
+
+    }
+
+    /* 2. Show ONLY the section that matches the URL ID */
+    .company-section:target {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 80px 10%;
+
+    }
+
+    .content{
+        flex: 1;
+        max-width: 75%;
+        padding-right: 40px;
+    }
+
+    /* Simple styling for your content */
+    .company-section h1 { 
+        font-size: 52px;
+        color: #0055ff; }
+    .company-section h3{
+        font-size: 22px;
+    }
+
+    .company-section p{
+        color: rgb(255, 255, 255);
+        border-right: 500px;
+        font-size: 18px;
+        line-height: 30px;
+
+    }
+    .company-section img{
+        height: 250px;
+        width: 250px;
+        border-radius: 12px;
+
+    }
+    @media (max-width: 700px){
+
+        .company-section:target {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 80px 10%;
+        }
+
+    .content{
+        max-width:100vw;
+        padding-right: 10px;
+    }
+    }
+
+
+
+
+</style>
+<!DOCTYPE html>
+
+<head>
+    <title>Kashinath Remeshkumar - Portfolio</title>
+    <link rel="icon" href="assets/icon.png">
+    <link rel="stylesheet" href="site_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+        <nav class="navbar">
+        <ul>
+           <li> <a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">Achievements</a></li>
+            <li><a href="contacts.html">Get in touch</a></li>
+           <li> <a href="projects.html">Previous Works</a></li>
+        </ul>
+
+    </nav>
+    
+
+<main>
+    <!-- KTU Section -->
+    <section id="ktu-details" class="company-section">
+        <div class="content">
+        <h1>KTU Special</h1>
+        <h3>Python Application Developer</h3>
+        <p>As a freelance Python Application Developer for KTU Special, 
+            I specialized in building robust automation tools using a Test-Driven Development (TDD) approach to ensure high reliability and code quality. 
+            I engineered a sophisticated document management suite that automated critical branding workflows,
+             including high-volume batch watermarking and seamless PDF merging, which significantly reduced manual processing time for the team.
+              Beyond PDF manipulation, I developed specialized utility scripts to automate the conversion of PowerPoint presentations into high-fidelity PDF documents, 
+              maintaining perfect structural integrity. By combining a user-friendly GUI with a rigorously tested back-end, 
+            I delivered scalable solutions that empowered non-technical staff to handle complex batch operations with precision and speed.</p>
+        </div>
+
+        <div class="brand-logo">
+            <a href="https://ktuspecial.in/" title="KTU special website" target="_blank"><img src="assets/ktu.png" alt="logo"></a>
+        </div>
+        
+    </section>
+
+    <!-- LXISoft Section -->
+    <section id="lxisoft-details" class="company-section">
+        <div class="content">
+        <h1>LXISoft</h1>
+        <h3>Full Stack Developer Intern</h3>
+        <p>During my internship as a Full Stack Web Developer at Diviso Softtech (Sub division of LXISoft),
+             I collaborated with a multidisciplinary team to build the Galaxy Dice Game,
+              a multiplayer online gaming platform developed using Java. This project was a significant exercise in team coordination and agile cooperation,
+               as we worked together to synchronize front-end user interfaces with complex back-end game logic.
+                I focused on ensuring robust data handling and real-time state management, while closely aligning with my peers to identify user requirements 
+                and design intuitive features. This experience reinforced the importance of collective problem-solving,
+             where regular code reviews and peer feedback allowed us to deliver a scalable, responsive, and interactive gaming experience</p>
+        </div>
+
+        <div class="brand-logo">
+            <a href="https://www.linkedin.com/company/lxisoft/" title="LXISoft profile" target="_blank"><img src="assets/lxi.png" alt="logo"></a>
+        </div>
+    </section>
+
+    <!-- Assistrend Section -->
+    <section id="assistrend-details" class="company-section">
+        <div class="content">
+        <h1>Assistrend</h1>
+        <h3>Social Media Content Creator</h3>
+        <p>During my time at Assistrend, I worked on creating informative and emotionally engaging video content for their Instagram page, 
+            with a strong focus on simplifying complex topics for a general audience. 
+            One of my key projects was an educational short film about an aspiring young girl who becomes fascinated by astronomy after seeing the night sky,
+             and a boy who patiently explains the universe to her in a relatable, story-driven way. I handled the complete video pipeline, 
+             from refining the narrative concept and planning the shots to editing the footage, adding motion graphics, 
+             and syncing visuals with music to maintain viewer attention. The goal of this piece was to inspire curiosity about space in younger audiences while aligning with Assistrend’s brand identity as a modern, knowledge-focused platform. 
+             Through careful pacing, clear on-screen text, and smooth transitions, the video was designed to feel both cinematic and informative, 
+            making complex astronomical ideas feel accessible and emotionally resonant for Instagram viewers.​</p>
+        </div>
+
+        <div class="brand-logo">
+            <a href="https://assistrend.com/" title="Assistrend website" target="_blank"><img src="assets/assistrend2.jpeg" alt="logo"></a>
+        </div>
+
+    </section>
+</main>
+
+
+
+
+<hr>
+
+
+    <footer>
+    <div id="footer_bar">
+        <a href="https://github.com/kashinathRemeshkumar" target="_blank"><h4>Github</h4></a>
+        <h4>©2026 Kashinath Remeshkumar</h4>
+        
+    </div>
+    </footer>
+
+</body>

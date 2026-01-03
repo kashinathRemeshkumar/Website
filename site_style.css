@@ -10,8 +10,8 @@ body{
     background-color: rgb(21, 21, 21);
 }
 main{
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 
@@ -86,6 +86,7 @@ hr{
 .intro-left{
     flex: 1; /*take 1 part of space 50%*/
     color: white;
+    padding-left: 50px;
 }
 .intro-left h1{
     font-size: 48px;
@@ -104,7 +105,8 @@ hr{
     flex: 1;
     display: flex;
     padding-top: 50px;
-    justify-content: center;  /*center horizontally*/
+    padding-right: 80px;
+    justify-content: right;  /*center horizontally*/
     align-items: center; /*center vertically*/
 }
 .port-image{
@@ -214,6 +216,7 @@ hr{
         justify-content: center;
         align-items: center;
         padding-top: 0;
+        padding-right: 0px;
         width: 100%;
     }
     
@@ -221,6 +224,8 @@ hr{
         width: 250px;
         height: 250px;
         margin: 0 auto;
+        
+        
     }
     
     .navbar ul {
