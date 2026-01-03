@@ -141,53 +141,52 @@ hr{
 }
 
 .brand-logo {
-    max-width: 200px;       /* ← Changed from width */
-    max-height: 200px;      /* ← Changed from height */
-    object-fit: contain;    /* Shows full logo without cropping */
-    opacity: 0.8;           /* Optional: makes them slightly transparent */
-    transition: all 0.3s;   /* Smooth hover effect */
+    max-width: 200px;      
+    max-height: 200px;      
+    object-fit: contain;    
+    opacity: 0.8;          
+    transition: all 0.3s;   
 }
 
-.brand-logo:hover {
-    filter: grayscale(0%);  /* Full color on hover */
-    opacity: 1;             /* Full opacity on hover */
+.brand-logo:hover {  
+    opacity: 1;             
 }
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 768px) 
+{
     .intro {
-        flex-direction: column;  /* Stack vertically instead of side-by-side */
-        min-height: auto;        /* Don't force full screen height */
+        flex-direction: column;  
+        min-height: auto;        
         padding: 20px;
     }
     
     .intro-left {
-        text-align: center;      /* Center text on mobile */
+        text-align: center;      
         padding: 0 20px;
-        margin-bottom: 30px;     /* Space before image */
+        margin-bottom: 30px;     
     }
     
     .intro-left h1 {
-        font-size: 32px;         /* Smaller heading for mobile */
+        font-size: 32px;         
     }
     
     .intro-left p {
-        font-size: 16px;         /* Smaller text for mobile */
+        font-size: 16px;         
     }
     
     .intro-right {
-        justify-content: center; /* Center the image horizontally */
-        padding-top: 0;          /* Remove top padding */
+        justify-content: center; 
+        padding-top: 0;          
         width: 100%;
     }
     
     .port-image {
-        width: 250px;            /* Smaller circular image */
+        width: 250px;            
         height: 250px;
-        margin: 0 auto;          /* Center it */
+        margin: 0 auto;         
     }
-    
     /* Fix navbar for mobile */
     .navbar ul {
         flex-direction: column;  /* Stack menu items vertically */
@@ -199,4 +198,3 @@ hr{
         padding: 10px;
     }
 }
-
