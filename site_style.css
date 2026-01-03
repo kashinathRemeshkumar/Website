@@ -77,7 +77,7 @@ hr{
 
 .intro{
     display: flex;
-    min-width: 100vh; /*vh viewport height 100%*/
+    min-height: 100vh; /*vh viewport height 100%*/
     align-items: center;
 }
 
@@ -154,42 +154,48 @@ hr{
 
 
 
-@media (max-width: 768px) 
-{
+@media (max-width: 700px) {
+    main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
     .intro {
-        flex-direction: column;  
-        min-height: auto;        
-        padding: 20px;
+        flex-direction: column;
+        min-height: auto; /* ← Don't force full height on mobile */
+        padding: 20px 0; /* ← Changed from 20px to 20px 0 */
     }
     
     .intro-left {
-        text-align: center;      
+        text-align: center;
         padding: 0 20px;
-        margin-bottom: 30px;     
+        margin-bottom: 30px;
     }
     
     .intro-left h1 {
-        font-size: 32px;         
+        font-size: 32px;
     }
     
     .intro-left p {
-        font-size: 16px;         
+        font-size: 16px;
     }
     
     .intro-right {
-        justify-content: center; 
-        padding-top: 0;          
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0;
         width: 100%;
     }
     
     .port-image {
-        width: 250px;            
+        width: 250px;
         height: 250px;
-        margin: 0 auto;         
+        margin: 0 auto;
     }
-    /* Fix navbar for mobile */
+    
     .navbar ul {
-        flex-direction: column;  /* Stack menu items vertically */
+        flex-direction: column;
         gap: 10px;
     }
     
