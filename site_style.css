@@ -1,0 +1,155 @@
+header{
+    color: aliceblue;
+    font-size: 40px;
+    text-align: center;
+}
+
+
+
+body{
+    background-color: rgb(21, 21, 21);
+}
+main{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+.navbar ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-evenly;  
+    
+}
+
+
+.navbar{
+    background-color: rgb(42, 42, 42);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 8px;
+
+}
+
+.navbar a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+
+    
+}
+
+.navbar a:hover{
+    background-color:rgb(112, 112, 112);
+    border-radius: 5px;
+}
+
+#footer_bar{
+    color: rgb(157, 156, 156);
+    font-style:oblique;
+    padding: 0px;
+    line-height: 5px;
+    
+}
+
+#footer_bar a{
+    color: inherit;
+    font-style: normal;
+    text-decoration: none;    
+}
+
+h3{
+    color: rgb(255, 255, 255);
+}
+h2{
+    color: rgb(255, 255, 255);
+}
+h1{
+    color: rgb(255, 255, 255);
+}
+hr{
+    border: 0;
+    height: 1px;
+    background-color: rgb(157, 156, 156);
+}
+
+.intro{
+    display: flex;
+    min-width: 100vh; /*vh viewport height 100%*/
+    align-items: center;
+}
+
+.intro-left{
+    flex: 1; /*take 1 part of space 50%*/
+    color: white;
+}
+.intro-left h1{
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.intro-left p{
+    font-size: 18px;
+    color: rgb(200,200,200);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+
+.intro-right{
+    flex: 1;
+    display: flex;
+    padding-top: 50px;
+    justify-content: right;  /*center horizontally*/
+    align-items: center; /*center vertically*/
+}
+.port-image{
+    width: 400px;
+    height: 395px;
+    border-radius: 50%;
+    overflow: hidden;  /*hides image ooutside circle*/
+}
+
+.port-image img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.brands{
+    padding:60px 28px;
+    text-align: center;
+}
+
+.brands h3{
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;    /* ← Add this for vertical alignment */
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.brand-logo {
+    max-width: 200px;       /* ← Changed from width */
+    max-height: 200px;      /* ← Changed from height */
+    object-fit: contain;    /* Shows full logo without cropping */
+    opacity: 0.8;           /* Optional: makes them slightly transparent */
+    transition: all 0.3s;   /* Smooth hover effect */
+}
+
+.brand-logo:hover {
+    filter: grayscale(0%);  /* Full color on hover */
+    opacity: 1;             /* Full opacity on hover */
+}
+
