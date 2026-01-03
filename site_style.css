@@ -144,8 +144,8 @@ hr{
     max-width: 200px;      
     max-height: 200px;      
     object-fit: contain;    
-    opacity: 0.8;          
-    transition: all 0.3s;   
+    opacity: 0.9;          
+    transition: all 0.6s;   
 }
 
 .brand-logo:hover {  
