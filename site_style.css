@@ -102,7 +102,7 @@ hr{
     flex: 1;
     display: flex;
     padding-top: 50px;
-    justify-content: right;  /*center horizontally*/
+    justify-content: center;  /*center horizontally*/
     align-items: center; /*center vertically*/
 }
 .port-image{
