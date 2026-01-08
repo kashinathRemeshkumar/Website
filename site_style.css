@@ -158,25 +158,30 @@ hr{
 }
 
 /* Update your existing logo-wrapper */
+/* Update your existing styles */
 .logo-wrapper {
-    background-color: rgb(32, 32, 32); /* Slightly lighter than body */
+    width: 290px; /* Keep width on the outer wrapper */
+}
+
+.logo-hover-layer {
+    background-color: rgb(32, 32, 32);
     padding: 30px;
     border-radius: 15px;
     border: 1px solid rgb(50, 50, 50);
     transition: all 0.3s ease;
-    width: 220px; /* Ensures consistency */
+    cursor: pointer;
 }
 
-.logo-wrapper:hover {
+/* Hover now works perfectly with the scroll animation */
+.logo-hover-layer:hover {
     transform: translateY(-10px);
     border-color: rgb(100, 100, 100);
     background-color: rgb(40, 40, 40);
 }
 
-.logo-wrapper:active {
-    transform: scale(0.95); /* Visual feedback for phone taps */
+.logo-hover-layer:active {
+    transform: scale(0.95);
 }
-
 
 .card-info {
     color: rgb(117, 117, 117);
@@ -292,7 +297,7 @@ hr{
 
 
 .animate-on-load {
-    animation: floatUp 1.5s ease-out forwards;
+    animation: floatUp 1s ease-out forwards;
 }
 
 /* 2. Use this for content lower down the page */
