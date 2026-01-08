@@ -168,7 +168,7 @@ hr{
 }
 
 .logo-wrapper:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     border-color: rgb(100, 100, 100);
     background-color: rgb(40, 40, 40);
 }
@@ -180,6 +180,25 @@ hr{
 
 .card-info {
     color: rgb(117, 117, 117);
+}
+
+
+
+.contact-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-bottom: 20px;
+
+}
+.contact-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-items label{
+    color: aliceblue;
 }
 
 
@@ -237,4 +256,23 @@ hr{
         display: block;
         padding: 10px;
     }
+
+    .contact-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-bottom: 20px;
+
+}
+.contact-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-items label{
+    color: aliceblue;
+}
+
 }
