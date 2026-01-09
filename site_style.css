@@ -20,19 +20,20 @@ main{
     padding: 0px;
     margin: 0px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     font-size: 18px;  
     
 }
 
 
 .navbar{
+    position: sticky;
+    top:0;
+    z-index: 1000;
     background-color: rgb(42, 42, 42);
     border-radius: 5px;
-    text-align: center;
     padding: 20px 8px;
-
-
+    
 }
 
 .navbar a{
@@ -122,7 +123,6 @@ hr{
     object-fit: cover;
 }
 
-
 .brands{
     padding:60px 28px;
     text-align: center;
@@ -157,10 +157,8 @@ hr{
             
 }
 
-/* Update your existing logo-wrapper */
-/* Update your existing styles */
 .logo-wrapper {
-    width: 290px; /* Keep width on the outer wrapper */
+    width: 290px; 
 }
 
 .logo-hover-layer {
@@ -188,11 +186,10 @@ hr{
 }
 
 
-
 .contact-box{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 30px;
     padding-bottom: 20px;
 
@@ -205,6 +202,183 @@ hr{
 .contact-items label{
     color: aliceblue;
 }
+
+
+.title:nth-child(1) { 
+    animation-range: 0% 30%; 
+}
+
+.title:nth-child(2) { 
+    animation-range: 25% 55%; 
+}
+
+.title:nth-child(3) { 
+    animation-range: 50% 80%; 
+}
+
+.title:nth-child(4) { 
+    animation-range: 75% 100%; 
+}
+.scroll-container {
+    display: flex;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    perspective: calc(100vw * 1.2); /* Dynamic perspective based on screen width */
+    overflow: hidden;
+    padding-top: 40px;
+}
+
+.title {
+    position: absolute;
+    /* Dynamic width: 85% of viewport width, with min/max constraints */
+    width: clamp(320px, 85vw, 1200px);
+    
+    /* Dynamic height: Based on viewport with aspect ratio consideration */
+    height: clamp(500px, 70vh, 800px);
+    
+    /* Alternative: Fixed aspect ratio approach */
+    /* aspect-ratio: 16 / 11; */
+    
+    background: #373737;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Dynamic font size based on container */
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    
+    /* Dynamic border radius */
+    border-radius: clamp(10px, 2vw, 20px);
+    
+    /* Dynamic padding */
+    padding: clamp(15px, 3vw, 30px);
+
+    animation: move-and-fade linear both;
+    animation-timeline: scroll(root block);
+}
+
+/* Tile Content with Dynamic Sizing */
+.tile-content {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 1.5vh, 15px);
+    width: 100%;
+    max-width: 100%;
+    padding: clamp(15px, 2vw, 20px);
+}
+
+.tile-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem); /* Scales from 1.8rem to 2.8rem */
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    transform: translateZ(50px);
+    margin-bottom: clamp(5px, 1vh, 10px);
+}
+
+.tile-desc {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: clamp(0.95rem, 1.8vw, 1.2rem); /* Dynamic description text */
+    line-height: 1.5;
+    margin-bottom: clamp(8px, 1vh, 10px);
+}
+
+.tile-stats {
+    display: flex;
+    gap: clamp(6px, 1vw, 10px);
+    flex-wrap: wrap;
+    margin: clamp(10px, 1.5vh, 15px) 0;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.432);
+    padding: clamp(6px, 1vh, 8px) clamp(12px, 1.5vw, 18px);
+    border-radius: 25px;
+    font-size: clamp(0.7rem, 1.2vw, 0.85rem); /* Dynamic badge size */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+.badge:hover {
+    background: rgba(27, 194, 32, 0.485);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.tile-features {
+    list-style: none;
+    padding: 0;
+    margin: clamp(10px, 1.5vh, 15px) 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tile-features li {
+    padding: clamp(6px, 1vh, 8px) 0;
+    padding-left: clamp(20px, 2.5vw, 25px);
+    position: relative;
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem); /* Dynamic feature text */
+}
+
+.tile-features li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #ff9d9d;
+    font-weight: bold;
+}
+
+.tile-link {
+    display: inline-block;
+    background: #fff;
+    color: #6c4141;
+    text-decoration: none;
+    padding: clamp(10px, 1.5vh, 14px) clamp(20px, 3vw, 30px);
+    border-radius: clamp(6px, 0.8vw, 8px);
+    font-weight: bold;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    width: fit-content;
+    margin-top: clamp(10px, 1.5vh, 15px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.tile-link:hover {
+    background: #ff9d9d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.tile-link:active {
+    transform: translateY(-1px);
+}
+
+/* Updated Animation with Dynamic Transform Values */
+@keyframes move-and-fade {
+    0% {
+        opacity: 0;
+        transform: translateX(100vw) translateZ(calc(-100vw * 0.8)) rotateY(-30deg);
+    }
+    40%, 60% {
+        opacity: 1;
+        transform: translateX(0) translateZ(0) rotateY(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100vw) translateZ(calc(-100vw * 0.8)) rotateY(30deg);
+    }
+}
+
+
+
 
 
 
@@ -251,6 +425,9 @@ hr{
         
         
     }
+    .navbar{
+        position: relative;
+        top:0;}
     
     .navbar ul {
         flex-direction: column;
@@ -258,7 +435,8 @@ hr{
     }
     
     .navbar a {
-        display: block;
+        display: flex;
+        justify-content: center;
         padding: 10px;
     }
 
@@ -266,15 +444,15 @@ hr{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     gap: 30px;
     padding-bottom: 20px;
-
 }
+
 .contact-items{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-end;
 }
 .contact-items label{
     color: aliceblue;
@@ -294,6 +472,9 @@ hr{
         transform: translateY(0);
     }
 }
+
+
+
 
 
 .animate-on-load {
