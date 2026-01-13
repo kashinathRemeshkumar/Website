@@ -1,38 +1,432 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <title>Kashinath Remeshkumar</title>
+    <title>Achievements - Kashinath Remeshkumar</title>
     <link rel="stylesheet" href="site_style.css">
     <link rel="icon" href="assets/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Certificate-specific styles */
+        .certificates-header {
+            color: white;
+            text-align: center;
+            padding: 60px 20px 40px;
+            animation: floatUp 1s ease-out forwards;
+        }
+
+        .certificates-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .certificates-header p {
+            color: rgb(200, 200, 200);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+        }
+
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .certificate-card {
+            background: rgb(42, 42, 42);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: 1px solid rgb(60, 60, 60);
+            animation: floatUp linear both;
+            animation-timeline: view();
+            animation-range: entry 10% cover 30%;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+            border-color: rgb(102, 126, 234);
+        }
+
+        .certificate-preview {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificate-preview::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%) rotate(45deg);
+            transition: 0.8s;
+        }
+
+        .certificate-card:hover .certificate-preview::before {
+            transform: translateX(100%) rotate(45deg);
+        }
+
+        .certificate-info {
+            padding: 1.5rem;
+        }
+
+        .certificate-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+            min-height: 50px;
+        }
+
+        .certificate-issuer {
+            color: rgb(102, 126, 234);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .certificate-date {
+            color: rgb(157, 156, 156);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+
+        .certificate-actions {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .btn-view {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-view:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-download {
+            background: rgb(60, 60, 60);
+            color: white;
+            border: 1px solid rgb(80, 80, 80);
+        }
+
+        .btn-download:hover {
+            background: rgb(80, 80, 80);
+            transform: scale(1.05);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            position: relative;
+            margin: 2% auto;
+            width: 90%;
+            max-width: 1200px;
+            height: 90%;
+        }
+
+        .close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: white;
+            font-size: 45px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 2001;
+            background: rgba(102, 126, 234, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .close:hover {
+            background: rgba(118, 75, 162, 0.9);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        #pdfViewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 700px) {
+            .certificate-grid {
+                grid-template-columns: 1fr;
+                padding: 20px 15px;
+                gap: 1.5rem;
+            }
+
+            .certificate-preview {
+                height: 180px;
+                font-size: 3rem;
+            }
+
+            .certificate-title {
+                font-size: 1.1rem;
+                min-height: auto;
+            }
+
+            .modal-content {
+                width: 95%;
+                height: 85%;
+                margin: 5% auto;
+            }
+
+            .close {
+                top: -45px;
+                font-size: 35px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 100px 20px;
+            color: rgb(157, 156, 156);
+        }
+
+        .empty-state h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .empty-state p {
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar">
         <ul>
-           <li> <a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="aboutme.html">Achievements</a></li>
             <li><a href="contacts.html">Get in touch</a></li>
-           <li> <a href="projects.html">Previous Works</a></li>
+            <li><a href="projects.html">Previous Works</a></li>
         </ul>
-
     </nav>
-    
 
     <hr>
+
     <main>
+        <div class="certificates-header">
+            <h1>🏆 My Certificates & Achievements</h1>
+            <p>A collection of my professional certifications and accomplishments</p>
+        </div>
 
+        <div class="certificate-grid" id="certificateGrid"></div>
     </main>
-    
+
     <hr>
 
+    <!-- Modal for PDF Viewer -->
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe id="pdfViewer" src=""></iframe>
+        </div>
+    </div>
 
     <footer>
-    <div id="footer_bar">
-        <a href="https://github.com/kashinathRemeshkumar" target="_blank"><h4>Git hub</h4></a>
-
-        <h4>©2026 Kashinath Remeshkumar</h4>
-        
-    </div>
+        <div id="footer_bar">
+            <a href="https://github.com/kashinathRemeshkumar" target="_blank"><h4>Git hub</h4></a>
+            <h4>©2026 Kashinath Remeshkumar</h4>
+        </div>
     </footer>
+
+    <script>
+        // ============================================
+        // CONFIGURE YOUR CERTIFICATES HERE
+        // ============================================
+        const certificates = [
+    {
+        filename: "python_basic_certificate.pdf",
+        title: "Python (Basic) Certification",
+        issuer: "HackerRank",
+        date: "December 2025"
+    },
+    {
+        filename: "Flutter_Certificate_8.pdf",
+        title: "Google Flutter App Development",
+        issuer: "Pace Lab",
+        date: "July 2024"
+    },
+    {
+        filename: "nptel.pdf",
+        title: "Introduction to Programming in C (Elite)",
+        issuer: "NPTEL - IIT Kanpur",
+        date: "January - March 2024"
+    },
+    {
+        filename: "iot_workshop.pdf",
+        title: "Python Internship",
+        issuer: "SRAI Smart Solutions",
+        date: "January 2024"
+    },
+    {
+        filename: "ai_python_ms.pdf",
+        title: "Python and Artificial Intelligence",
+        issuer: "Microsoft Learn Student Ambassador",
+        date: "2024"
+    },
+    {
+        filename: "ai_python_google.pdf",
+        title: "Python and Artificial Intelligence Bootcamp",
+        issuer: "Google Developer Student Clubs",
+        date: "2024"
+    }
+];
+
+
+        // Path to your certificates folder
+        const certificatesFolder = 'assets/cirtificates/';
+
+        // Certificate icon options
+        const icons = ['📜', '🏆', '🎓', '⭐', '🏅', '📚'];
+
+        // Generate certificate cards
+        function loadCertificates() {
+            const grid = document.getElementById('certificateGrid');
+
+            if (certificates.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <h2>No Certificates Yet</h2>
+                        <p>Check back soon for updates!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            certificates.forEach((cert, index) => {
+                const icon = icons[index % icons.length];
+                const card = document.createElement('div');
+                card.className = 'certificate-card';
+                card.onclick = () => openModal(certificatesFolder + cert.filename);
+
+                card.innerHTML = `
+                    <div class="certificate-preview">
+                        ${icon}
+                    </div>
+                    <div class="certificate-info">
+                        <div class="certificate-title">${cert.title}</div>
+                        <div class="certificate-issuer">${cert.issuer}</div>
+                        <div class="certificate-date">${cert.date}</div>
+                        <div class="certificate-actions">
+                            <a href="${certificatesFolder + cert.filename}" 
+                               class="btn btn-view" 
+                               target="_blank" 
+                               onclick="event.stopPropagation()">View</a>
+                            <a href="${certificatesFolder + cert.filename}" 
+                               class="btn btn-download" 
+                               download 
+                               onclick="event.stopPropagation()">Download</a>
+                        </div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        function openModal(pdfPath) {
+            const modal = document.getElementById('pdfModal');
+            const viewer = document.getElementById('pdfViewer');
+
+            modal.style.display = 'block';
+            viewer.src = pdfPath;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('pdfModal');
+            const viewer = document.getElementById('pdfViewer');
+
+            modal.style.display = 'none';
+            viewer.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('pdfModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Load certificates when page loads
+        document.addEventListener('DOMContentLoaded', loadCertificates);
+    </script>
 </body>
+</html>
