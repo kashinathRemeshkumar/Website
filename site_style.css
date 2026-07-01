@@ -245,7 +245,7 @@ hr{
     font-size: clamp(1.2rem, 2vw, 2rem);
     border-radius: clamp(10px, 2vw, 20px);
     padding: clamp(15px, 2vw, 30px);
-    animation: move-and-fade linear both;
+    animation: move-and-fade 1ms linear both;
     animation-timeline: scroll(root block);
     overflow-y: auto; /* Allow scroll if content is too large */
     overflow-x: hidden;
@@ -519,4 +519,44 @@ hr{
     animation-timeline: view();
     animation-range: entry 20% cover 40%; /*start% end%*/
 }
+
+@supports not (animation-timeline: scroll()) {
+        main {
+        height: auto !important; /* overrides the inline style="height:300vh" */
+    }
+
+
+    .scroll-container {
+        position: static;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 40px 0;
+        perspective: none;
+        overflow: visible;
+    }
+ 
+    .title {
+        position: static;
+        opacity: 1;
+        animation: none;
+        transform: none;
+    }
+}
+
+.scroll-hint {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    margin: 20px 0;
+    animation: hint-bounce 1.5s ease-in-out infinite;
+}
+ 
+@keyframes hint-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(6px); opacity: 1; }
+}
+
 
