@@ -133,6 +133,11 @@
 
         function openCertificate(cert) {
             const url = certificatesFolder + cert.filename;
+            // Many phone browsers can't show a PDF inside an iframe, so open it in a tab instead
+            if (navigator.pdfViewerEnabled === false) {
+                window.open(url, '_blank', 'noopener');
+                return;
+            }
             dialogTitle.textContent = cert.title;
             newTabLink.href = url;
             frame.src = url;
