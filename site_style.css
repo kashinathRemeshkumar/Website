@@ -1189,7 +1189,7 @@ body:has(dialog[open]) {
         font-size: 1rem;
     }
 
-    /* Slimmer floating header, no visible scrollbar, hint that nav scrolls */
+    /* Compact floating header (stays pinned while scrolling) */
     .site-header {
         padding: 0.5rem 0.5rem 0;
     }
@@ -1206,21 +1206,6 @@ body:has(dialog[open]) {
 
     .brand {
         font-size: 1rem;
-    }
-
-    .nav ul {
-        scrollbar-width: none;
-        -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
-        mask-image: linear-gradient(90deg, #000 88%, transparent);
-    }
-
-    .nav ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    .nav a {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.92rem;
     }
 
     /* Headings that fit 320-390px screens */
@@ -1298,5 +1283,34 @@ body:has(dialog[open]) {
        bottom of the page never stay half-faded */
     .reveal {
         animation-range: entry 0% entry 70%;
+    }
+}
+
+/* Scrollable nav: swipe sideways, current page is centred by site.js.
+   The side padding lets even the first and last link reach the middle. */
+@media (max-width: 800px) {
+    .nav ul {
+        justify-content: flex-start;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        padding: 0.1rem calc(50% - 30px);
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 18px, #000 calc(100% - 18px), transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 18px, #000 calc(100% - 18px), transparent);
+    }
+
+    .nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav li {
+        flex: none;
+    }
+
+    .nav a {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.95rem;
+        white-space: nowrap;
     }
 }
