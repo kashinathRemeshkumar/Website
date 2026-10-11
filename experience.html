@@ -1,161 +1,133 @@
-<!-- experience.html -->
-<style>
-    /* 1. Hide all detail sections by default */
-    .company-section {
-        display: none;
-
-    }
-
-    /* 2. Show ONLY the section that matches the URL ID */
-    .company-section:target {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 80px 10%;
-
-    }
-
-    .content{
-        flex: 1;
-        max-width: 75%;
-        padding-right: 40px;
-    }
-
-    /* Simple styling for your content */
-    .company-section h1 { 
-        font-size: 52px;
-        color: #0055ff; }
-    .company-section h3{
-        font-size: 22px;
-    }
-
-    .company-section p{
-        color: rgb(255, 255, 255);
-        border-right: 500px;
-        font-size: 18px;
-        line-height: 30px;
-
-    }
-    .company-section img{
-        height: 250px;
-        width: 250px;
-        border-radius: 12px;
-
-    }
-    @media (max-width: 700px){
-
-        .company-section:target {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 80px 10%;
-        }
-
-    .content{
-        max-width:100vw;
-        padding-right: 10px;
-    }
-    }
-
-
-
-
-</style>
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <title>Kashinath Remeshkumar - Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0d0d13">
+    <meta name="description" content="Experience and education of Kashinath Remeshkumar: Django developer at Assistrend, full stack intern at Diviso Softtech, freelance Python developer for KTU Special.">
+    <title>Experience - Kashinath Remeshkumar</title>
     <link rel="icon" href="assets/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap">
     <link rel="stylesheet" href="site_style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-        <nav class="navbar">
-        <ul>
-           <li> <a href="index.html">Home</a></li>
-            <li><a href="aboutme.html">Achievements</a></li>
-            <li><a href="contacts.html">Get in touch</a></li>
-           <li> <a href="projects.html">Previous Works</a></li>
-        </ul>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    </nav>
-    
+    <header class="site-header">
+        <div class="wrap">
+            <a class="brand" href="index.html">Kashinath Remeshkumar</a>
+            <nav class="nav" aria-label="Main">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="experience.html" aria-current="page">Experience</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="aboutme.html">Achievements</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<main>
-    <!-- KTU Section -->
-    <section id="ktu-special" class="company-section animate-on-load">
-        <div class="content">
-        <h1>KTU Special</h1>
-        <h3>Python Application Developer</h3>
-        <p>As a freelance Python Application Developer for KTU Special, 
-            I specialized in building robust automation tools using a Test-Driven Development (TDD) approach to ensure high reliability and code quality. 
-            I engineered a sophisticated document management suite that automated critical branding workflows,
-             including high-volume batch watermarking and seamless PDF merging, which significantly reduced manual processing time for the team.
-              Beyond PDF manipulation, I developed specialized utility scripts to automate the conversion of PowerPoint presentations into high-fidelity PDF documents, 
-              maintaining perfect structural integrity. By combining a user-friendly GUI with a rigorously tested back-end, 
-            I delivered scalable solutions that empowered non-technical staff to handle complex batch operations with precision and speed.</p>
+    <main id="main">
+        <div class="wrap page-head">
+            <h1 class="grad-text">Experience</h1>
+            <p>Where I've worked and studied.</p>
         </div>
 
-        <div class="brand-logo">
-            <a href="https://ktuspecial.in/" title="KTU special website" target="_blank"><img src="assets/ktu.png" alt="logo"></a>
+        <div class="wrap">
+            <article class="entry reveal" id="assistrend">
+                <a class="logo-tile" href="https://assistrend.com/" target="_blank" rel="noopener" aria-label="Assistrend website">
+                    <img src="assets/assistrend2.jpeg" alt="Assistrend logo">
+                </a>
+                <div>
+                    <h2>Assistrend</h2>
+                    <div class="role-block">
+                        <div class="role-line">
+                            <p class="role">Django developer (intern)</p>
+                            <p class="when">May 2026 - Aug 2026</p>
+                        </div>
+                        <div class="body">
+                        <p>I built and fixed backend features for a social media app focused on youth mental health and wellbeing, using Django REST Framework and PostgreSQL, deployed on Render.</p>
+                        <p>I diagnosed and fixed bugs across accounts, social, personalization, messaging and notifications, including input validation, case-insensitive email and username lookups, and message delivery and read status. I documented the API endpoints in Swagger with drf-spectacular and worked through Git and GitHub branches, pull requests and code review.</p>
+                        </div>
+                    </div>
+                    <div class="role-block">
+                        <div class="role-line">
+                            <p class="role">Marketing content creator (volunteer)</p>
+                            <p class="when">Aug 2023 - Oct 2023</p>
+                        </div>
+                        <div class="body">
+                        <p>At this early-stage startup I wrote, filmed and edited marketing videos and social content to build brand awareness. One project was an educational short film about a young girl who becomes fascinated by astronomy after seeing the night sky, and a boy who patiently explains the universe to her. I handled the whole pipeline: concept, shot planning, editing, motion graphics and syncing visuals to music.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="entry reveal" id="lxisoft">
+                <a class="logo-tile" href="https://www.linkedin.com/company/lxisoft/" target="_blank" rel="noopener" aria-label="LXISoft on LinkedIn">
+                    <img src="assets/lxi.png" alt="LXISoft logo">
+                </a>
+                <div>
+                    <h2>Diviso Softtech</h2>
+                    <div class="role-block">
+                        <div class="role-line">
+                            <p class="role">Full stack web developer (intern)</p>
+                            <p class="when">Jun 2025 - Jul 2025</p>
+                        </div>
+                        <div class="body">
+                        <p>At Diviso Softtech, a subdivision of LXISoft, I built responsive features in HTML, CSS and JavaScript for a game-based learning framework. I worked with the team on scalable architecture, UI/UX design and data handling, and turned user requirements into shipped features.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="entry reveal" id="ktu-special">
+                <a class="logo-tile" href="https://ktuspecial.in/" target="_blank" rel="noopener" aria-label="KTU Special website">
+                    <img src="assets/ktu.png" alt="KTU Special logo">
+                </a>
+                <div>
+                    <h2>KTU Special</h2>
+                    <div class="role-block">
+                        <div class="role-line">
+                            <p class="role">Python application developer (freelance)</p>
+                            <p class="when">Jan 2022 - Jan 2024</p>
+                        </div>
+                        <div class="body">
+                        <p>I designed and deployed a custom Python GUI application that automated the document branding workflow for ktuspecial.com, replacing manual batch watermarking and merging with a one-click process. Non-technical team members now manage document workflows on their own, without engineering support.</p>
+                        <p>I also built the PDF watermarking engine behind it: clickable hyperlinked text watermarks, scale- and transparency-controlled image watermarks, and optional front or appended pages. I wrote scripts that convert PowerPoint presentations to PDF, and used test-driven development to keep the tools reliable.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
         </div>
-        
-    </section>
 
-    <!-- LXISoft Section -->
-    <section id="lxisoft" class="company-section animate-on-load">
-        <div class="content">
-        <h1>LXISoft</h1>
-        <h3>Full Stack Developer Intern</h3>
-        <p>During my internship as a Full Stack Web Developer at Diviso Softtech (Sub division of LXISoft),
-             I collaborated with a multidisciplinary team to build the Galaxy Dice Game,
-              a multiplayer online gaming platform developed using Java. This project was a significant exercise in team coordination and agile cooperation,
-               as we worked together to synchronize front-end user interfaces with complex back-end game logic.
-                I focused on ensuring robust data handling and real-time state management, while closely aligning with my peers to identify user requirements 
-                and design intuitive features. This experience reinforced the importance of collective problem-solving,
-             where regular code reviews and peer feedback allowed us to deliver a scalable, responsive, and interactive gaming experience</p>
+        <section class="section wrap" aria-labelledby="education-heading">
+            <h2 class="section-title reveal" id="education-heading">Education</h2>
+            <article class="entry edu reveal">
+                <div>
+                    <h2>Sree Buddha College of Engineering</h2>
+                    <div class="role-line">
+                        <p class="role">B.Tech, Computer Science (AI &amp; ML)</p>
+                        <p class="when">2026 &middot; CGPA 7.86 / 10</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>&copy; 2026 Kashinath Remeshkumar</p>
+            <ul>
+                <li><a href="https://github.com/kashinathRemeshkumar" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/kashi-nath-remeshkumar/" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
         </div>
-
-        <div class="brand-logo">
-            <a href="https://www.linkedin.com/company/lxisoft/" title="LXISoft profile" target="_blank"><img src="assets/lxi.png" alt="logo"></a>
-        </div>
-    </section>
-
-    <!-- Assistrend Section -->
-    <section id="assistrend" class="company-section animate-on-load">
-        <div class="content">
-        <h1>Assistrend</h1>
-        <h3>Social Media Content Creator</h3>
-        <p>During my time at Assistrend, I worked on creating informative and emotionally engaging video content for their Instagram page, 
-            with a strong focus on simplifying complex topics for a general audience. 
-            One of my key projects was an educational short film about an aspiring young girl who becomes fascinated by astronomy after seeing the night sky,
-             and a boy who patiently explains the universe to her in a relatable, story-driven way. I handled the complete video pipeline, 
-             from refining the narrative concept and planning the shots to editing the footage, adding motion graphics, 
-             and syncing visuals with music to maintain viewer attention. The goal of this piece was to inspire curiosity about space in younger audiences while aligning with Assistrend’s brand identity as a modern, knowledge-focused platform. 
-             Through careful pacing, clear on-screen text, and smooth transitions, the video was designed to feel both cinematic and informative, 
-            making complex astronomical ideas feel accessible and emotionally resonant for Instagram viewers.​</p>
-        </div>
-
-        <div class="brand-logo">
-            <a href="https://assistrend.com/" title="Assistrend website" target="_blank"><img src="assets/assistrend2.jpeg" alt="logo"></a>
-        </div>
-
-    </section>
-</main>
-
-
-
-
-<hr>
-
-
-    <footer>
-    <div id="footer_bar">
-        <a href="https://github.com/kashinathRemeshkumar" target="_blank"><h4>Github</h4></a>
-        <h4>©2026 Kashinath Remeshkumar</h4>
-        
-    </div>
     </footer>
 
 </body>
+</html>

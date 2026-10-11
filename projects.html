@@ -1,138 +1,163 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <title>Kashinath Remeshkumar</title>
-    <link rel="stylesheet" href="site_style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0d0d13">
+    <meta name="description" content="Projects by Kashinath Remeshkumar: diffusion-based image enhancement research, a RAG study tutor, IoT crop recommendation, steganography, PDF automation and an Android music player.">
+    <title>Projects - Kashinath Remeshkumar</title>
     <link rel="icon" href="assets/icon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap">
+    <link rel="stylesheet" href="site_style.css">
 </head>
 
 <body>
-    <nav class="navbar">
-        <ul>
-           <li> <a href="index.html">Home</a></li>
-            <li><a href="aboutme.html">Achievements</a></li>
-            <li><a href="contacts.html">Get in touch</a></li>
-           <li> <a href="projects.html">Previous Works</a></li>
-        </ul>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    </nav>
-    <p class="scroll-hint">↓ Scroll down to see projects</p>
-    
-
-    <hr>
-    <main style="height: 300vh;">
-        <div class="scroll-container">
-            <section class="title">
-                <div class="tile-content">
-        <h2 class="tile-title">PDF Watermarking Tool</h2>
-        <p class="tile-desc">A professional Python GUI for automated PDF branding and merging. Built to streamline document workflows for businesses needing consistent branding across multiple PDF files.</p>
-
-        <div class="tile-stats">
-            <span class="badge">Python</span>
-            <span class="badge">Tkinter GUI</span>
-            <span class="badge">PyPDF2</span>
-            <span class="badge">Automation</span>
+    <header class="site-header">
+        <div class="wrap">
+            <a class="brand" href="index.html">Kashinath Remeshkumar</a>
+            <nav class="nav" aria-label="Main">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="projects.html" aria-current="page">Projects</a></li>
+                    <li><a href="aboutme.html">Achievements</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <ul class="tile-features">
-            <li>Clickable Hyperlink Watermarks - Embed interactive URLs</li>
-            <li>Batch Processing - Handle 100+ files simultaneously</li>
-            <li>Image Transparency Control - Adjustable opacity 0-100%</li>
-            <li>Front/Append Pages - Add custom cover/end pages</li>
-            <li>Background Image Support - Scale and position control</li>
-        </ul>
-
-
-        <a href="https://github.com/kashinathRemeshkumar/PDF_Watermarking_tool" target="_blank" class="tile-link">View Source →</a>
-                </div>
-            </section>
-
-            <section class="title">
-                <div class="tile-content">
-        <h2 class="tile-title">IoT Crop Recommendation System</h2>
-        <p class="tile-desc">Smart agriculture platform leveraging IoT sensors and Deep Neural Networks to analyze real-time soil and environmental data, delivering precise crop recommendations to optimize farming decisions.</p>
-
-        <div class="tile-stats">
-            <span class="badge">IoT Sensors</span>
-            <span class="badge">Deep Learning</span>
-            <span class="badge">Python</span>
-            <span class="badge">TensorFlow</span>
+    <main id="main">
+        <div class="wrap page-head">
+            <h1 class="grad-text">Projects</h1>
+            <p>Things I've built, from diffusion models to IoT hardware. Every project has its source on GitHub.</p>
         </div>
+        <p class="deck-note wrap">Scroll down to flip through the projects</p>
 
-        <ul class="tile-features">
-            <li>Real-Time Monitoring - Soil moisture, pH, and temperature sensors</li>
-            <li>DNN Prediction Model - 95%+ accuracy in crop suitability</li>
-            <li>Environmental Analysis - Weather pattern integration</li>
-            <li>Farmer Dashboard - Intuitive visualization of recommendations</li>
-            <li>Multi-Crop Support - Optimized for regional agriculture</li>
-        </ul>
-
-        <a href="https://github.com/kashinathRemeshkumar/Crop_recomendation_system_using_IoT" target="_blank" class="tile-link">View Source →</a>
-                </div>
-            </section>
-
-            <section class="title">
-                <div class="tile-content">
-        <h2 class="tile-title">Low-Light Image Enhancement Using CLIP Semantic Model</h2>
-        <p class="tile-desc">Advanced deep learning project for enhancing images captured in low-light conditions using CLIP semantic guidance. Features zero-shot capability and semantic-aware processing for superior image quality recovery.</p>
-
-        <div class="tile-stats">
-            <span class="badge">Python</span>
-            <span class="badge">PyTorch</span>
-            <span class="badge">CLIP</span>
-            <span class="badge">Computer Vision</span>
-            <span class="badge">Deep Learning</span>
+        <div class="deck">
+            <div class="deck-stage">
+                <article class="project-card">
+                    <h2>Zone-Music</h2>
+                    <p>A native Android music player written in Kotlin. The interface is built entirely in Jetpack Compose and audio playback runs on ExoPlayer, the same media engine many Android music and video apps use. It is my most recent project.</p>
+                    <ul class="chips" aria-label="Technologies">
+                    <li>Kotlin</li>
+                    <li>Jetpack Compose</li>
+                    <li>ExoPlayer</li>
+                    <li>Android</li>
+                    <li>Gradle (Kotlin DSL)</li>
+                    </ul>
+                <ul class="features">
+                    <li><strong>Modern UI:</strong> Modern Material3 UI</li>
+                    <li><strong>Media engine:</strong> ExoPlayer handles audio decoding and playback</li>
+                    <li><strong>Modern Android stack:</strong> 100% Kotlin, built with Gradle Kotlin DSL scripts</li>
+                </ul>
+                    <a class="btn btn-primary btn-small" href="https://github.com/kashinathRemeshkumar/Zone-Music" target="_blank" rel="noopener">View source on GitHub</a>
+                </article>
+                <article class="project-card">
+                    <h2>Stego Suite</h2>
+                    <p>A multi-format steganography toolkit for hiding data in images, audio and video using LSB encoding. It does not include encryption.</p>
+                    <ul class="chips" aria-label="Technologies">
+                    <li>C++</li>
+                    <li>Python</li>
+                    <li>LSB encoding</li>
+                    <li>FFmpeg</li>
+                    </ul>
+                <ul class="features">
+                    <li><strong>Image steganography:</strong> hides any file inside a PNG using the RGB channels, with a custom header for reliable extraction</li>
+                    <li><strong>Audio steganography:</strong> Mid/Side channel LSB encoding embeds secret audio in cover audio, with lossless 16-bit PCM WAV output</li>
+                </ul>
+                    <a class="btn btn-primary btn-small" href="https://github.com/kashinathRemeshkumar/stego-suite" target="_blank" rel="noopener">View source on GitHub</a>
+                </article>
+                <article class="project-card">
+                    <h2>Exam-Compass</h2>
+                    <p>A retrieval-augmented generation (RAG) study tutor for NEET and JEE preparation that indexes NCERT textbooks.</p>
+                    <ul class="chips" aria-label="Technologies">
+                    <li>Python</li>
+                    <li>ChromaDB</li>
+                    <li>sentence-transformers</li>
+                    <li>LLM</li>
+                    <li>RAG</li>
+                    </ul>
+                <ul class="features">
+                    <li><strong>Grounded answers:</strong> study material is embedded with sentence-transformers and retrieved from ChromaDB to ground the LLM</li>
+                    <li><strong>Low-cost inference:</strong> the LLM backend runs on Google Colab behind a Cloudflare Tunnel, with no dedicated server</li>
+                </ul>
+                    <a class="btn btn-primary btn-small" href="https://github.com/kashinathRemeshkumar/Exam-Compass" target="_blank" rel="noopener">View source on GitHub</a>
+                </article>
+                <article class="project-card">
+                    <h2>PDF Watermarking Tool</h2>
+                    <p>A Python GUI for automated PDF branding and merging. It powers the document workflow at KTU Special.</p>
+                    <ul class="chips" aria-label="Technologies">
+                    <li>Python</li>
+                    <li>Tkinter GUI</li>
+                    <li>PyPDF2</li>
+                    <li>Automation</li>
+                    </ul>
+                <ul class="features">
+                    <li><strong>Clickable hyperlink watermarks:</strong> embed interactive URLs</li>
+                    <li><strong>Batch processing:</strong> handle 100+ files at once</li>
+                    <li><strong>Image watermarks:</strong> scale and transparency control from 0 to 100%</li>
+                    <li><strong>Front and appended pages:</strong> add custom cover and end pages</li>
+                </ul>
+                    <a class="btn btn-primary btn-small" href="https://github.com/kashinathRemeshkumar/PDF_Watermarking_tool" target="_blank" rel="noopener">View source on GitHub</a>
+                </article>
+                <article class="project-card">
+                    <h2>Zero-Shot Low-Light Image Enhancement (published research)</h2>
+                    <p>A CLIP-guided semantic diffusion pipeline that brightens low-light images with no paired training data and no fine-tuning, with a Gradio demo hosted on Colab.</p>
+                    <ul class="chips" aria-label="Technologies">
+                    <li>PyTorch</li>
+                    <li>Stable Diffusion v1.5</li>
+                    <li>CLIP</li>
+                    <li>Gradio</li>
+                    </ul>
+                <ul class="features">
+                    <li><strong>Semantic guidance:</strong> CLIP ViT-B/32 steers Stable Diffusion v1.5</li>
+                    <li><strong>Consistency filter:</strong> rejects outputs that drift from the scene (CLIP cosine similarity above 0.85)</li>
+                    <li><strong>Faster sampling:</strong> DDIM and FP16 cut sampling from 1000 steps to 40-50</li>
+                    <li><strong>Evaluation:</strong> LOL and ExDark with PSNR, SSIM, LPIPS and MUSIQ: 15.56 dB and 0.729 SSIM vs 15.40 dB and 0.515 for a retinex baseline, on the evaluated samples</li>
+                </ul>
+                    <a class="btn btn-primary btn-small" href="https://github.com/kashinathRemeshkumar/Zero-Shot-Low-Light-Image-Enhancement-using-Vision-Language-Models-and-Semantic-Diffusion" target="_blank" rel="noopener">View source on GitHub</a>
+                </article>
+                <article class="project-card">
+                    <h2>IoT Crop Recommendation System</h2>
+                    <p>A smart agriculture system where ESP8266/ESP32 sensor nodes capture real-time soil and environmental data and a deep neural network recommends crops to farmers.</p>
+                    <ul class="chips" aria-label="Technologies">
+                    <li>ESP8266 / ESP32</li>
+                    <li>Deep neural network</li>
+                    <li>Python</li>
+                    <li>TensorFlow</li>
+                    </ul>
+                <ul class="features">
+                    <li><strong>Real-time monitoring:</strong> soil moisture, pH and temperature sensors</li>
+                    <li><strong>DNN prediction model:</strong> 95%+ accuracy in crop suitability</li>
+                    <li><strong>Farmer dashboard:</strong> clear visualisation of recommendations</li>
+                </ul>
+                    <a class="btn btn-primary btn-small" href="https://github.com/kashinathRemeshkumar/Crop_recomendation_system_using_IoT" target="_blank" rel="noopener">View source on GitHub</a>
+                </article>
+            </div>
+            <div class="deck-track t1" aria-hidden="true"></div>
+            <div class="deck-track t2" aria-hidden="true"></div>
+            <div class="deck-track t3" aria-hidden="true"></div>
+            <div class="deck-track t4" aria-hidden="true"></div>
+            <div class="deck-track t5" aria-hidden="true"></div>
+            <div class="deck-track t6" aria-hidden="true"></div>
         </div>
-
-        <ul class="tile-features">
-            <li>CLIP Integration - Leverages multimodal visual-language understanding</li>
-            <li>Zero-Shot Enhancement - Works without paired training datasets</li>
-            <li>Semantic Preservation - Maintains content integrity while enhancing illumination</li>
-            <li>Noise Reduction - Effective suppression of low-light artifacts</li>
-            <li>Research-Based - Built on state-of-the-art CLIP-Fourier methods</li>
-        </ul>
-
-        <a href="https://github.com/kashinathRemeshkumar/Low-light-image-enhancement-suing-clip-semantic-model" target="_blank" class="tile-link">View Source →</a>
-                </div>
-            </section>
-
-            <section class="title">
-                <div class="tile-content">
-        <h2 class="tile-title">Galaxy-Dice Game</h2>
-        <p class="tile-desc">Multiplayer online dice game with real-time networking and space-themed graphics. A collaborative Java project featuring strategic gameplay mechanics and socket-based communication.</p>
-
-        <div class="tile-stats">
-            <span class="badge">Java</span>
-            <span class="badge">Multiplayer</span>
-            <span class="badge">Sockets</span>
-            <span class="badge">Team Project</span>
-        </div>
-
-        <ul class="tile-features">
-            <li>Real-Time Networking - Socket-based multiplayer infrastructure</li>
-            <li>Turn-Based Gameplay - Strategic dice mechanics</li>
-            <li>Custom UI - Space-themed visual design</li>
-            <li>5-Developer Team - Collaborative development workflow</li>
-        </ul>
-
-        <a href="https://github.com/kashinathRemeshkumar/Galaxy-Dice-Game" target="_blank" class="tile-link">View Source →</a>
-                </div>
-            </section>
-
-        </div>
-
     </main>
-    
-<hr>
 
-
-    <footer>
-    <div id="footer_bar">
-        <a href="https://github.com/kashinathRemeshkumar" target="_blank"><h4>Github</h4></a>
-    
-        <h4>©2026 Kashinath Remeshkumar</h4>
-        
-    </div>
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>&copy; 2026 Kashinath Remeshkumar</p>
+            <ul>
+                <li><a href="https://github.com/kashinathRemeshkumar" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/kashi-nath-remeshkumar/" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+        </div>
     </footer>
+
 </body>
+</html>
